@@ -22,7 +22,7 @@ kotlin {
 
     cocoapods {
         summary = "Some description for the Shared Module"
-        homepage = "Link to the Shared Module homepage"
+        homepage = "https://github.com/goga172792/shared-kotlin-library"
         version = "1.0"
         ios.deploymentTarget = "13.0"
         framework {

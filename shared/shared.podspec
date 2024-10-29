@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'shared'
     spec.version                  = '1.0'
-    spec.homepage                 = 'Link to the Shared Module homepage'
+    spec.homepage                 = 'https://github.com/goga172792/shared-kotlin-library'
     spec.source                   = { :http=> ''}
     spec.authors                  = ''
     spec.license                  = ''
