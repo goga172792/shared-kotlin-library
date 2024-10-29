@@ -10,6 +10,7 @@ Pod::Spec.new do |spec|
     spec.libraries                = 'c++'
     spec.module_name              = "#{spec.name}_umbrella"
     spec.ios.deployment_target    = '13.0'
+    spec.pod_target_xcconfig      = { 'CODE_SIGNING_ALLOWED' => 'NO' }
                 
                 
     if !Dir.exist?('build/cocoapods/framework/shared.framework') || Dir.empty?('build/cocoapods/framework/shared.framework')
