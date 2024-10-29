@@ -6,14 +6,14 @@ Pod::Spec.new do |spec|
     spec.authors                  = 'Gio'
     spec.license                  = { :type => 'MIT', :file => 'LICENSE' }
     spec.summary                  = 'Some description for the Shared Module'
-    spec.vendored_frameworks      = 'build/cocoapods/framework/shared.framework'
+    spec.vendored_frameworks      = 'shared.framework'
     spec.libraries                = 'c++'
     spec.module_name              = "#{spec.name}_umbrella"
     spec.ios.deployment_target    = '13.0'
     spec.pod_target_xcconfig      = { 'CODE_SIGNING_ALLOWED' => 'NO' }
                 
                 
-    if !Dir.exist?('build/cocoapods/framework/shared.framework') || Dir.empty?('build/cocoapods/framework/shared.framework')
+    if !Dir.exist?('shared.framework') || Dir.empty?('shared.framework')
         raise "
 
         Kotlin framework 'shared' doesn't exist yet, so a proper Xcode project can't be generated.
