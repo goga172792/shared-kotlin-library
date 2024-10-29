@@ -21,16 +21,13 @@ kotlin {
     iosSimulatorArm64()
 
     cocoapods {
-        summary = "Some description for the Shared Module"
-        homepage = "https://github.com/goga172792/shared-kotlin-library"
-        version = "1.0"
-        ios.deploymentTarget = "13.0"
         framework {
+            version = "1.0.0"
             baseName = "shared"
-            isStatic = true
+            isStatic = false  // Or set to true based on your needs
         }
     }
-    
+
     sourceSets {
         commonMain.dependencies {
             //put your multiplatform dependencies here

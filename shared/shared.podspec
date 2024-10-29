@@ -1,16 +1,14 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'shared'
     spec.version                  = '1.0.0'
-    spec.homepage                 = 'https://github.com/goga172792/shared-kotlin-library'
-    spec.source                   = { :git => "https://github.com/goga172792/shared-kotlin-library.git", :branch => 'main' }
-    spec.authors                  = 'Gio'
-    spec.license                  = { :type => 'MIT', :file => 'LICENSE' }
-    spec.summary                  = 'Some description for the Shared Module'
-    spec.vendored_frameworks      = 'shared/build/cocoapods/framework/shared.framework'
+    spec.homepage                 = ''
+    spec.source                   = { :http=> ''}
+    spec.authors                  = ''
+    spec.license                  = ''
+    spec.summary                  = ''
+    spec.vendored_frameworks      = 'build/cocoapods/framework/shared.framework'
     spec.libraries                = 'c++'
-    spec.module_name              = "#{spec.name}_umbrella"
-    spec.ios.deployment_target    = '13.0'
-    spec.pod_target_xcconfig      = { 'CODE_SIGNING_ALLOWED' => 'NO' }
+                
                 
                 
     if !Dir.exist?('build/cocoapods/framework/shared.framework') || Dir.empty?('build/cocoapods/framework/shared.framework')
