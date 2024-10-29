@@ -1,0 +1,3 @@
+language = Objective-C
+modules = shared
+linkerOpts = -framework shared
