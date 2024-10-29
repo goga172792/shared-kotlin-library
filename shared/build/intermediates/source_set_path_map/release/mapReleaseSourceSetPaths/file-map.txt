@@ -1,0 +1,9 @@
+com.example.shared_library.shared-pngs-0 /Users/user/Work/shared-kotlin-library/shared/build/generated/res/pngs/release
+com.example.shared_library.shared-resValues-1 /Users/user/Work/shared-kotlin-library/shared/build/generated/res/resValues/release
+com.example.shared_library.shared-mergeReleaseResources-2 /Users/user/Work/shared-kotlin-library/shared/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.example.shared_library.shared-mergeReleaseResources-3 /Users/user/Work/shared-kotlin-library/shared/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.example.shared_library.shared-release-4 /Users/user/Work/shared-kotlin-library/shared/build/intermediates/merged_res/release/mergeReleaseResources
+com.example.shared_library.shared-androidMain-5 /Users/user/Work/shared-kotlin-library/shared/src/androidMain/res
+com.example.shared_library.shared-androidRelease-6 /Users/user/Work/shared-kotlin-library/shared/src/androidRelease/res
+com.example.shared_library.shared-main-7 /Users/user/Work/shared-kotlin-library/shared/src/main/res
+com.example.shared_library.shared-release-8 /Users/user/Work/shared-kotlin-library/shared/src/release/res
