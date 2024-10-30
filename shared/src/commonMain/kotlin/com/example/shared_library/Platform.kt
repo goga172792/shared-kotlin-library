@@ -5,10 +5,3 @@ interface Platform {
 }
 
 expect fun getPlatform(): Platform
-
-class ABC{
-    fun doSomething(){
-        println("QAq mej")
-    }
-
-}
