@@ -49,3 +49,15 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
+
+tasks.register<Copy>("buildXCFramework") {
+    // Define the default CocoaPods output path
+    val cocoapodsReleaseDir = layout.buildDirectory.dir("cocoapods/publish/release")
+    val outputDir = File(rootProject.projectDir, "")
+
+    from(cocoapodsReleaseDir)
+    into(outputDir)
+
+    // Make sure the XCFramework is built before moving
+    dependsOn("podPublishXCFramework")
+}
