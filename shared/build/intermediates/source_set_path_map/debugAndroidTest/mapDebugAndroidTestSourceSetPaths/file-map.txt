@@ -1,0 +1,5 @@
+com.example.shared_library.test.shared-androidTest-0 /Users/user/Work/shared-kotlin-library/shared/build/generated/res/resValues/androidTest/debug
+com.example.shared_library.test.shared-mergeDebugAndroidTestResources-1 /Users/user/Work/shared-kotlin-library/shared/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.example.shared_library.test.shared-mergeDebugAndroidTestResources-2 /Users/user/Work/shared-kotlin-library/shared/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.example.shared_library.test.shared-debugAndroidTest-3 /Users/user/Work/shared-kotlin-library/shared/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
+com.example.shared_library.test.shared-debug-4 /Users/user/Work/shared-kotlin-library/shared/build/intermediates/packaged_res/debug/packageDebugResources

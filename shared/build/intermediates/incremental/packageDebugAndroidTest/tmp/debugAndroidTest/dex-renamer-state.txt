@@ -1,0 +1,10 @@
+#Wed Oct 30 17:21:34 AMT 2024
+base.0=/Users/user/Work/shared-kotlin-library/shared/build/intermediates/dex/debugAndroidTest/mergeExtDexDebugAndroidTest/classes.dex
+base.1=/Users/user/Work/shared-kotlin-library/shared/build/intermediates/dex/debugAndroidTest/mergeLibDexDebugAndroidTest/2/classes.dex
+base.2=/Users/user/Work/shared-kotlin-library/shared/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
+path.0=classes.dex
+path.1=2/classes.dex
+path.2=0/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex

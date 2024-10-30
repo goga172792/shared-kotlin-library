@@ -26,12 +26,6 @@ kotlin {
             baseName = "shared"
             isStatic = false  // Or set to true based on your needs
         }
-
-        pod("shared") {
-            source = git("https://github.com/goga172792/shared-kotlin-library.git") {
-                branch = "main" // Use the correct branch or tag
-            }
-        }
     }
 
     sourceSets {

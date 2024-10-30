@@ -6,6 +6,10 @@
 	objectVersion = 55;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4729A5432F8B195E8DFB622E /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04ABD077B44111C4EFAF115 /* Pods_ios.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		05F2823A27BFF52F00A213D9 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,10 +24,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		05F281E327BFA36E00A213D9 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		05F2820027BFF4EB00A213D9 /* macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		05F2821827BFF52C00A213D9 /* watchos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watchos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		05F2824827BFF63B00A213D9 /* tvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F281E327BFA36E00A213D9 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F2820027BFF4EB00A213D9 /* macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F2821827BFF52C00A213D9 /* watchos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watchos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F2824827BFF63B00A213D9 /* tvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FE8F082D533715676968D5A /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
+		A04ABD077B44111C4EFAF115 /* Pods_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF73B9A29493E5AF92655507 /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4729A5432F8B195E8DFB622E /* Pods_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				05F281C627BFA08C00A213D9 /* Products */,
+				99F62B61659DFF224D963C4C /* Pods */,
+				CCB2C4D9C7F4E4362C4C8937 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +79,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		99F62B61659DFF224D963C4C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF73B9A29493E5AF92655507 /* Pods-ios.debug.xcconfig */,
+				5FE8F082D533715676968D5A /* Pods-ios.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CCB2C4D9C7F4E4362C4C8937 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A04ABD077B44111C4EFAF115 /* Pods_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,16 +104,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05F281F927BFA37000A213D9 /* Build configuration list for PBXNativeTarget "ios" */;
 			buildPhases = (
+				45A1652D03E897CF37B4FB2C /* [CP] Check Pods Manifest.lock */,
 				05F281DF27BFA36E00A213D9 /* Sources */,
 				05F281E027BFA36E00A213D9 /* Frameworks */,
 				05F281E127BFA36E00A213D9 /* Resources */,
+				CF46C06F49BB6020FF7E2FBA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "ios";
-			productName = "ios";
+			name = ios;
+			productName = ios;
 			productReference = 05F281E327BFA36E00A213D9 /* ios.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -101,7 +131,7 @@
 			);
 			dependencies = (
 			);
-			name = "macos";
+			name = macos;
 			productName = "macos-app";
 			productReference = 05F2820027BFF4EB00A213D9 /* macos.app */;
 			productType = "com.apple.product-type.application";
@@ -117,8 +147,8 @@
 			);
 			dependencies = (
 			);
-			name = "watchos";
-			productName = "watchos";
+			name = watchos;
+			productName = watchos;
 			productReference = 05F2821827BFF52C00A213D9 /* watchos.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
@@ -134,8 +164,8 @@
 			);
 			dependencies = (
 			);
-			name = "tvos";
-			productName = "tvos";
+			name = tvos;
+			productName = tvos;
 			productReference = 05F2824827BFF63B00A213D9 /* tvos.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -162,7 +192,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 05F281BE27BFA02500A213D9 /* Build configuration list for PBXProject "shared" */;
+			buildConfigurationList = 05F281BE27BFA02500A213D9 /* Build configuration list for PBXProject "synthetic" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -214,6 +244,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		45A1652D03E897CF37B4FB2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF46C06F49BB6020FF7E2FBA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios/Pods-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios/Pods-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios/Pods-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		05F281DF27BFA36E00A213D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -253,6 +325,7 @@
 		};
 		05F281FA27BFA37000A213D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF73B9A29493E5AF92655507 /* Pods-ios.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -321,7 +394,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dummy.ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dummy.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -331,6 +404,7 @@
 		};
 		05F281FB27BFA37000A213D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FE8F082D533715676968D5A /* Pods-ios.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -392,7 +466,7 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dummy.ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dummy.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -605,13 +679,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = watchos_target_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "watchos";
+				INFOPLIST_KEY_CFBundleDisplayName = watchos;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dummy.watchos.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dummy.watchos.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -672,12 +746,12 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = watchos_target_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "watchos";
+				INFOPLIST_KEY_CFBundleDisplayName = watchos;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dummy.watchos.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dummy.watchos.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -755,7 +829,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dummy.tvos";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dummy.tvos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -824,7 +898,7 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dummy.tvos";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dummy.tvos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -837,7 +911,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		05F281BE27BFA02500A213D9 /* Build configuration list for PBXProject "shared" */ = {
+		05F281BE27BFA02500A213D9 /* Build configuration list for PBXProject "synthetic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				05F281BF27BFA02500A213D9 /* Debug */,
