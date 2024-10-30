@@ -1,9 +1,9 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'shared'
     spec.version                  = '1.0.0'
-    spec.homepage                 = 'https://github.com/goga172792/shared-kotlin-library/tree/main'
+    spec.homepage                 = 'https://github.com/goga172792/shared-kotlin-library'
     spec.source                   = { :http=> ''}
-    spec.authors                  = ''
+    spec.authors                  = 'Kotlin Dev'
     spec.license                  = { :type => 'MIT', :text => 'License text'}
     spec.summary                  = 'Shared library'
                 
