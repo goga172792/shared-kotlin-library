@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
                 
                 
                 
-    if !Dir.exist?('shared.framework') || Dir.empty?('shared.framework')
+    if !Dir.exist?('shared.xcframework') || Dir.empty?('shared.xcframework')
         raise "
 
         Kotlin framework 'shared' doesn't exist yet, so a proper Xcode project can't be generated.
