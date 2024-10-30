@@ -25,7 +25,11 @@ kotlin {
             version = "1.0.0"
             baseName = "shared"
             isStatic = false  // Or set to true based on your needs
-            ios.deploymentTarget = "14.0"
+            ios.deploymentTarget = "12.0"
+            summary = "Shared library"
+            homepage = "https://github.com/goga172792/shared-kotlin-library/tree/main"
+            extraSpecAttributes["vendored_frameworks"] = "shared.xcframework"
+            license = "{ :type => 'MIT', :text => 'License text'}"
         }
     }
 
