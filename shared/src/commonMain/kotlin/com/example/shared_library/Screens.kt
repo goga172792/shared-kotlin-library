@@ -1,6 +1,6 @@
 package com.example.shared_library
 
-enum class Screen(val screenName: String) {
+enum class ScreensData(val screenName: String) {
     screenNotInitialized("screen not initialized"),
     splash("splash"),
     webView("webview"),
