@@ -1,4 +1,4 @@
-#Wed Oct 30 17:21:34 AMT 2024
+#Wed Oct 30 18:12:18 AMT 2024
 base.0=/Users/user/Work/shared-kotlin-library/shared/build/intermediates/dex/debugAndroidTest/mergeExtDexDebugAndroidTest/classes.dex
 base.1=/Users/user/Work/shared-kotlin-library/shared/build/intermediates/dex/debugAndroidTest/mergeLibDexDebugAndroidTest/2/classes.dex
 base.2=/Users/user/Work/shared-kotlin-library/shared/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex

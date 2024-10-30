@@ -25,12 +25,12 @@ kotlin {
             version = "1.0.0"
             baseName = "shared"
             isStatic = false  // Or set to true based on your needs
+            ios.deploymentTarget = "14.0"
         }
     }
 
     sourceSets {
         commonMain.dependencies {
-            //put your multiplatform dependencies here
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

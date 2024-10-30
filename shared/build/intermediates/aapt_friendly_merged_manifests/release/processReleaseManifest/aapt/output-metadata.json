@@ -5,7 +5,7 @@
     "kind": "Directory"
   },
   "applicationId": "com.example.shared_library",
-  "variantName": "release",
+  "variantName": "debug",
   "elements": [
     {
       "type": "SINGLE",
