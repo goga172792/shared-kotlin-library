@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class SharedKotlinEnumCompanion, SharedKotlinEnum<E>, SharedScreensData, SharedKotlinArray<T>, SharedKotlinThrowable, SharedKotlinException, SharedKotlinRuntimeException, SharedKotlinIllegalStateException;
+@class SharedLocalizationData, SharedKotlinEnumCompanion, SharedKotlinEnum<E>, SharedScreensData, SharedKotlinArray<T>, SharedKotlinThrowable, SharedKotlinException, SharedKotlinRuntimeException, SharedKotlinIllegalStateException;
 
-@protocol SharedPlatform, SharedKotlinComparable, SharedKotlinIterator;
+@protocol SharedMultiplatform_settingsSettings, SharedPlatform, SharedKotlinComparable, SharedKotlinIterator;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -144,18 +144,33 @@ __attribute__((swift_name("KotlinBoolean")))
 + (instancetype)numberWithBool:(BOOL)value;
 @end
 
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("LocalizationData")))
+@interface SharedLocalizationData : SharedBase
+- (instancetype)initWithTranslations:(NSDictionary<NSString *, NSString *> *)translations __attribute__((swift_name("init(translations:)"))) __attribute__((objc_designated_initializer));
+- (SharedLocalizationData *)doCopyTranslations:(NSDictionary<NSString *, NSString *> *)translations __attribute__((swift_name("doCopy(translations:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSDictionary<NSString *, NSString *> *translations __attribute__((swift_name("translations")));
+@end
+
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("LocalizationManager")))
 @interface SharedLocalizationManager : SharedBase
-- (instancetype)initWithApiUrl:(NSString *)apiUrl __attribute__((swift_name("init(apiUrl:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithSettings:(id<SharedMultiplatform_settingsSettings>)settings __attribute__((swift_name("init(settings:)"))) __attribute__((objc_designated_initializer));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)downloadLocalizationDataWithCompletionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("downloadLocalizationData(completionHandler:)")));
-- (NSString * _Nullable)getLocalizationKey:(NSString *)key __attribute__((swift_name("getLocalization(key:)")));
-- (void)loadLocalizationDataFromFile __attribute__((swift_name("loadLocalizationDataFromFile()")));
+- (void)fetchLocalizationDataApiUrl:(NSString *)apiUrl completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("fetchLocalizationData(apiUrl:completionHandler:)")));
+- (NSString * _Nullable)getLocalizedValueKey:(NSString *)key __attribute__((swift_name("getLocalizedValue(key:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -312,6 +327,34 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Platform_iosKt")))
 @interface SharedPlatform_iosKt : SharedBase
 + (id<SharedPlatform>)getPlatform __attribute__((swift_name("getPlatform()")));
+@end
+
+__attribute__((swift_name("Multiplatform_settingsSettings")))
+@protocol SharedMultiplatform_settingsSettings
+@required
+- (void)clear __attribute__((swift_name("clear()")));
+- (BOOL)getBooleanKey:(NSString *)key defaultValue:(BOOL)defaultValue __attribute__((swift_name("getBoolean(key:defaultValue:)")));
+- (SharedBoolean * _Nullable)getBooleanOrNullKey:(NSString *)key __attribute__((swift_name("getBooleanOrNull(key:)")));
+- (double)getDoubleKey:(NSString *)key defaultValue:(double)defaultValue __attribute__((swift_name("getDouble(key:defaultValue:)")));
+- (SharedDouble * _Nullable)getDoubleOrNullKey:(NSString *)key __attribute__((swift_name("getDoubleOrNull(key:)")));
+- (float)getFloatKey:(NSString *)key defaultValue:(float)defaultValue __attribute__((swift_name("getFloat(key:defaultValue:)")));
+- (SharedFloat * _Nullable)getFloatOrNullKey:(NSString *)key __attribute__((swift_name("getFloatOrNull(key:)")));
+- (int32_t)getIntKey:(NSString *)key defaultValue:(int32_t)defaultValue __attribute__((swift_name("getInt(key:defaultValue:)")));
+- (SharedInt * _Nullable)getIntOrNullKey:(NSString *)key __attribute__((swift_name("getIntOrNull(key:)")));
+- (int64_t)getLongKey:(NSString *)key defaultValue:(int64_t)defaultValue __attribute__((swift_name("getLong(key:defaultValue:)")));
+- (SharedLong * _Nullable)getLongOrNullKey:(NSString *)key __attribute__((swift_name("getLongOrNull(key:)")));
+- (NSString *)getStringKey:(NSString *)key defaultValue:(NSString *)defaultValue __attribute__((swift_name("getString(key:defaultValue:)")));
+- (NSString * _Nullable)getStringOrNullKey:(NSString *)key __attribute__((swift_name("getStringOrNull(key:)")));
+- (BOOL)hasKeyKey:(NSString *)key __attribute__((swift_name("hasKey(key:)")));
+- (void)putBooleanKey:(NSString *)key value:(BOOL)value __attribute__((swift_name("putBoolean(key:value:)")));
+- (void)putDoubleKey:(NSString *)key value:(double)value __attribute__((swift_name("putDouble(key:value:)")));
+- (void)putFloatKey:(NSString *)key value:(float)value __attribute__((swift_name("putFloat(key:value:)")));
+- (void)putIntKey:(NSString *)key value:(int32_t)value __attribute__((swift_name("putInt(key:value:)")));
+- (void)putLongKey:(NSString *)key value:(int64_t)value __attribute__((swift_name("putLong(key:value:)")));
+- (void)putStringKey:(NSString *)key value:(NSString *)value __attribute__((swift_name("putString(key:value:)")));
+- (void)removeKey:(NSString *)key __attribute__((swift_name("remove(key:)")));
+@property (readonly) NSSet<NSString *> *keys __attribute__((swift_name("keys")));
+@property (readonly) int32_t size __attribute__((swift_name("size")));
 @end
 
 __attribute__((swift_name("KotlinThrowable")))
