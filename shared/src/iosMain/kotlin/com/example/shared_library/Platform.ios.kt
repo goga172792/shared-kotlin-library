@@ -1,5 +1,6 @@
 package com.example.shared_library
 
+import platform.Foundation.*
 import platform.UIKit.UIDevice
 
 class IOSPlatform: Platform {
