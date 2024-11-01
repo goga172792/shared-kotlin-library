@@ -1,10 +1,10 @@
-import com.russhwolf.settings.*
+import com.russhwolf.settings.Settings
+import com.russhwolf.settings.get
+import com.russhwolf.settings.set
 import io.ktor.client.*
 import io.ktor.client.call.*
-import io.ktor.client.engine.* // or another appropriate engine like OkHttp
 import io.ktor.client.request.*
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 
@@ -19,7 +19,6 @@ class LocalizationManager(private val settings: Settings) {
     private val cacheKey: String = "localization_cache"
 
     suspend fun fetchLocalizationData(apiUrl: String) {
-
         cachedData = cachedData ?: settings.get<String>(cacheKey)?.let { json ->
             Json.decodeFromString<LocalizationData>(json)
         }
