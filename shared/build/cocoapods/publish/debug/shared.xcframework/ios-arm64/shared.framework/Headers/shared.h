@@ -301,8 +301,8 @@ __attribute__((swift_name("Platform_iosKt")))
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("SomeClassKt")))
-@interface SharedSomeClassKt : SharedBase
+__attribute__((swift_name("SomeClass_iosKt")))
+@interface SharedSomeClass_iosKt : SharedBase
 + (NSString *)randomUUID __attribute__((swift_name("randomUUID()")));
 @end
 
