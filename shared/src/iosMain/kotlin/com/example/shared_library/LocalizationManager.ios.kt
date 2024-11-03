@@ -11,7 +11,7 @@ import platform.Foundation.create
 import platform.Foundation.writeToFile
 
 @OptIn(ExperimentalForeignApi::class)
-actual suspend fun saveJsonDataToFile(jsonData: String, filename: String, context: Any?) {
+actual suspend fun saveJsonDataToFile(jsonData: String, filename: String, context: PlatformContext) {
     val paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true)
     val cacheDir = paths.firstOrNull() as String?
     val filePath = cacheDir?.let { "$it/$filename" }
@@ -23,3 +23,8 @@ actual suspend fun saveJsonDataToFile(jsonData: String, filename: String, contex
 }
 @OptIn(BetaInteropApi::class)
 fun String.toNSString(): NSString = NSString.create(string = this)
+
+class IOSPlatformContext() : PlatformContext {
+    override val cacheDirPath: String
+        get() = ""
+}

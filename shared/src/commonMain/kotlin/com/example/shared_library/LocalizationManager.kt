@@ -1,5 +1,7 @@
 package com.example.shared_library
+
 import io.ktor.client.*
+import io.ktor.client.call.body
 import io.ktor.client.request.*
 import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.plugins.logging.*
@@ -28,14 +30,18 @@ object LocalizationManager {
 
     private var localizationData: Map<String, String> = emptyMap()
 
-    init {
+    lateinit var platformContext: PlatformContext
+
+    fun initialize(platformContext: PlatformContext, onLocalizationSet: (() -> Unit)? = null) {
+        this.platformContext = platformContext
         CoroutineScope(Dispatchers.Default).launch {
             fetchAndCacheLocalization()
+            onLocalizationSet?.invoke()
         }
     }
 
     private suspend fun fetchAndCacheLocalization() {
-        val jsonData = client.get(API_URL).toString()
+        val jsonData = client.get(API_URL).body<String>()
         saveJsonToCache(jsonData)
         localizationData = parseJsonToMap(jsonData)
     }
@@ -50,7 +56,7 @@ object LocalizationManager {
     }
 
     private suspend fun saveJsonToCache(jsonData: String) {
-        saveJsonDataToFile(jsonData, LOCALIZATION_FILENAME, null)
+        saveJsonDataToFile(jsonData, LOCALIZATION_FILENAME, this.platformContext)
     }
 
     fun getStringByKey(key: String): String? {
@@ -58,4 +64,8 @@ object LocalizationManager {
     }
 }
 
-expect suspend fun saveJsonDataToFile(jsonData: String, filename: String, context: Any?)
+expect suspend fun saveJsonDataToFile(jsonData: String, filename: String, context: PlatformContext)
+
+interface PlatformContext {
+    val cacheDirPath: String
+}
