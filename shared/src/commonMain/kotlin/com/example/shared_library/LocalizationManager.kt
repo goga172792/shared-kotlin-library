@@ -15,6 +15,8 @@ import kotlinx.serialization.json.jsonPrimitive
 object LocalizationManager {
     private const val LOCALIZATION_FILENAME = "localization.json"
     private var API_URL = ""
+    private var localizationData: Map<String, String> = emptyMap()
+    lateinit var platformContext: PlatformContext
 
     private val client = HttpClient {
         install(ContentNegotiation) {
@@ -27,10 +29,6 @@ object LocalizationManager {
             level = LogLevel.BODY
         }
     }
-
-    private var localizationData: Map<String, String> = emptyMap()
-
-    lateinit var platformContext: PlatformContext
 
     fun initialize(urlString: String, platformContext: PlatformContext, onLocalizationSet: (() -> Unit)? = null) {
         this.platformContext = platformContext
