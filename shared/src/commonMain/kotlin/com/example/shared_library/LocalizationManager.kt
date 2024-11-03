@@ -11,7 +11,7 @@ import kotlinx.serialization.json.jsonPrimitive
 
 object LocalizationManager {
     private const val LOCALIZATION_FILENAME = "localization.json"
-    private const val API_URL = "YOUR_API_URL_HERE"  // Replace with your localization API endpoint
+    private const val API_URL = "https://mocki.io/v1/a26c8d94-5577-4cb1-b2b0-e31f25fe6426"  // Replace with your localization API endpoint
 
     private val client = HttpClient {
         install(ContentNegotiation) {
