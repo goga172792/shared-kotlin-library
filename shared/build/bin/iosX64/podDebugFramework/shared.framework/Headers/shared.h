@@ -333,15 +333,15 @@ __attribute__((swift_name("LocalizationManager_iosKt")))
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("LocalizationManagerKt")))
-@interface SharedLocalizationManagerKt : SharedBase
-+ (NSString *)localizedFormat:(NSString *)receiver args:(SharedKotlinArray<id> *)args __attribute__((swift_name("localizedFormat(_:args:)")));
-@end
-
-__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Platform_iosKt")))
 @interface SharedPlatform_iosKt : SharedBase
 + (id<SharedPlatform>)getPlatform __attribute__((swift_name("getPlatform()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("StringExtensionsKt")))
+@interface SharedStringExtensionsKt : SharedBase
++ (NSString *)localizedFormat:(NSString *)receiver args:(SharedKotlinArray<id> *)args __attribute__((swift_name("localizedFormat(_:args:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
