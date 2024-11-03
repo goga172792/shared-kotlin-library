@@ -8,7 +8,7 @@
 
 @class SharedLocalizationManager, SharedKotlinEnumCompanion, SharedKotlinEnum<E>, SharedScreensData, SharedKotlinArray<T>, NSString, SharedKotlinThrowable, SharedKotlinException, SharedKotlinRuntimeException, SharedKotlinIllegalStateException;
 
-@protocol SharedPlatform, SharedKotlinComparable, SharedKotlinIterator;
+@protocol SharedPlatform, SharedPlatformContext, SharedKotlinComparable, SharedKotlinIterator;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -167,6 +167,20 @@ __attribute__((swift_name("IOSPlatform")))
 @property (readonly) NSString *name __attribute__((swift_name("name")));
 @end
 
+__attribute__((swift_name("PlatformContext")))
+@protocol SharedPlatformContext
+@required
+@property (readonly) NSString *cacheDirPath __attribute__((swift_name("cacheDirPath")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("IOSPlatformContext")))
+@interface SharedIOSPlatformContext : SharedBase <SharedPlatformContext>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@property (readonly) NSString *cacheDirPath __attribute__((swift_name("cacheDirPath")));
+@end
+
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("LocalizationManager")))
 @interface SharedLocalizationManager : SharedBase
@@ -175,6 +189,8 @@ __attribute__((swift_name("LocalizationManager")))
 + (instancetype)localizationManager __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) SharedLocalizationManager *shared __attribute__((swift_name("shared")));
 - (NSString * _Nullable)getStringByKeyKey:(NSString *)key __attribute__((swift_name("getStringByKey(key:)")));
+- (void)initializePlatformContext:(id<SharedPlatformContext>)platformContext onLocalizationSet:(void (^ _Nullable)(void))onLocalizationSet __attribute__((swift_name("initialize(platformContext:onLocalizationSet:)")));
+@property id<SharedPlatformContext> platformContext __attribute__((swift_name("platformContext")));
 @end
 
 __attribute__((swift_name("KotlinComparable")))
@@ -312,7 +328,7 @@ __attribute__((swift_name("LocalizationManager_iosKt")))
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-+ (void)saveJsonDataToFileJsonData:(NSString *)jsonData filename:(NSString *)filename context:(id _Nullable)context completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("saveJsonDataToFile(jsonData:filename:context:completionHandler:)")));
++ (void)saveJsonDataToFileJsonData:(NSString *)jsonData filename:(NSString *)filename context:(id<SharedPlatformContext>)context completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("saveJsonDataToFile(jsonData:filename:context:completionHandler:)")));
 + (NSString *)toNSString:(NSString *)receiver __attribute__((swift_name("toNSString(_:)")));
 @end
 
