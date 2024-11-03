@@ -189,7 +189,7 @@ __attribute__((swift_name("LocalizationManager")))
 + (instancetype)localizationManager __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) SharedLocalizationManager *shared __attribute__((swift_name("shared")));
 - (NSString * _Nullable)getStringByKeyKey:(NSString *)key __attribute__((swift_name("getStringByKey(key:)")));
-- (void)initializePlatformContext:(id<SharedPlatformContext>)platformContext onLocalizationSet:(void (^ _Nullable)(void))onLocalizationSet __attribute__((swift_name("initialize(platformContext:onLocalizationSet:)")));
+- (void)initializeUrlString:(NSString *)urlString platformContext:(id<SharedPlatformContext>)platformContext onLocalizationSet:(void (^ _Nullable)(void))onLocalizationSet __attribute__((swift_name("initialize(urlString:platformContext:onLocalizationSet:)")));
 @property id<SharedPlatformContext> platformContext __attribute__((swift_name("platformContext")));
 @end
 

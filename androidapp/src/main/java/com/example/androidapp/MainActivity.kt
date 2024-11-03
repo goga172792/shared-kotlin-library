@@ -18,7 +18,7 @@ import com.example.shared_library.LocalizationManager
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        LocalizationManager.initialize(AndroidPlatformContext(this)){
+        LocalizationManager.initialize("https://mocki.io/v1/a26c8d94-5577-4cb1-b2b0-e31f25fe6426", AndroidPlatformContext(this)){
             print(LocalizationManager.getStringByKey("qaqik"))
         }
         enableEdgeToEdge()

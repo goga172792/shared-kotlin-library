@@ -14,7 +14,7 @@ import kotlinx.serialization.json.jsonPrimitive
 
 object LocalizationManager {
     private const val LOCALIZATION_FILENAME = "localization.json"
-    private const val API_URL = "https://mocki.io/v1/a26c8d94-5577-4cb1-b2b0-e31f25fe6426"  // Replace with your localization API endpoint
+    private var API_URL = ""
 
     private val client = HttpClient {
         install(ContentNegotiation) {
@@ -32,8 +32,9 @@ object LocalizationManager {
 
     lateinit var platformContext: PlatformContext
 
-    fun initialize(platformContext: PlatformContext, onLocalizationSet: (() -> Unit)? = null) {
+    fun initialize(urlString: String, platformContext: PlatformContext, onLocalizationSet: (() -> Unit)? = null) {
         this.platformContext = platformContext
+        this.API_URL = urlString
         CoroutineScope(Dispatchers.Default).launch {
             fetchAndCacheLocalization()
             onLocalizationSet?.invoke()
