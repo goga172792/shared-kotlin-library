@@ -70,3 +70,11 @@ expect suspend fun saveJsonDataToFile(jsonData: String, filename: String, contex
 interface PlatformContext {
     val cacheDirPath: String
 }
+
+fun String.localizedFormat(vararg args: Any?): String {
+    var formattedString = this
+    args.forEachIndexed { index, arg ->
+        formattedString = formattedString.replace("{$index}", arg.toString())
+    }
+    return formattedString
+}
