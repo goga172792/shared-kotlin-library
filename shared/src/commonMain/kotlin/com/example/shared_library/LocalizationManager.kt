@@ -34,15 +34,30 @@ object LocalizationManager {
         this.platformContext = platformContext
         this.API_URL = urlString
         CoroutineScope(Dispatchers.Default).launch {
-            fetchAndCacheLocalization()
+            try {
+                fetchAndCacheLocalization()
+            } catch (e: Exception) {
+                loadLocalizationFromCache()
+            }
             onLocalizationSet?.invoke()
         }
     }
 
     private suspend fun fetchAndCacheLocalization() {
-        val jsonData = client.get(API_URL).body<String>()
-        saveJsonToCache(jsonData)
-        localizationData = parseJsonToMap(jsonData)
+        try {
+            val jsonData = client.get(API_URL).body<String>()
+            saveJsonToCache(jsonData)
+            localizationData = parseJsonToMap(jsonData)
+        } catch (e: Exception) {
+            throw e // Rethrow exception to trigger fallback
+        }
+    }
+
+    private suspend fun loadLocalizationFromCache() {
+        val cachedData = readJsonDataFromFile(LOCALIZATION_FILENAME, platformContext)
+        if (cachedData != null) {
+            localizationData = parseJsonToMap(cachedData)
+        }
     }
 
     private fun parseJsonToMap(jsonData: String): Map<String, String> {
@@ -50,12 +65,12 @@ object LocalizationManager {
         return if (jsonObject is JsonObject) {
             jsonObject.mapValues { it.value.jsonPrimitive.contentOrNull ?: "" }
         } else {
-            emptyMap() // Return an empty map or handle the error appropriately
+            emptyMap()
         }
     }
 
     private suspend fun saveJsonToCache(jsonData: String) {
-        saveJsonDataToFile(jsonData, LOCALIZATION_FILENAME, this.platformContext)
+        saveJsonDataToFile(jsonData, LOCALIZATION_FILENAME, platformContext)
     }
 
     fun getStringByKey(key: String): String? {
@@ -64,6 +79,7 @@ object LocalizationManager {
 }
 
 expect suspend fun saveJsonDataToFile(jsonData: String, filename: String, context: PlatformContext)
+expect suspend fun readJsonDataFromFile(filename: String, context: PlatformContext): String?
 
 
 interface PlatformContext {

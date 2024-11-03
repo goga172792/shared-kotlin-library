@@ -328,6 +328,12 @@ __attribute__((swift_name("LocalizationManager_iosKt")))
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
++ (void)readJsonDataFromFileFilename:(NSString *)filename context:(id<SharedPlatformContext>)context completionHandler:(void (^)(NSString * _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("readJsonDataFromFile(filename:context:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
 + (void)saveJsonDataToFileJsonData:(NSString *)jsonData filename:(NSString *)filename context:(id<SharedPlatformContext>)context completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("saveJsonDataToFile(jsonData:filename:context:completionHandler:)")));
 + (NSString *)toNSString:(NSString *)receiver __attribute__((swift_name("toNSString(_:)")));
 @end
