@@ -7,6 +7,7 @@ import kotlinx.serialization.json.Json
 import kotlinx.coroutines.*
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.jsonPrimitive
 
 object LocalizationManager {
@@ -40,8 +41,12 @@ object LocalizationManager {
     }
 
     private fun parseJsonToMap(jsonData: String): Map<String, String> {
-        val jsonObject = Json.parseToJsonElement(jsonData) as JsonObject
-        return jsonObject.mapValues { it.value.jsonPrimitive.content }
+        val jsonObject = Json.parseToJsonElement(jsonData)
+        return if (jsonObject is JsonObject) {
+            jsonObject.mapValues { it.value.jsonPrimitive.contentOrNull ?: "" }
+        } else {
+            emptyMap() // Return an empty map or handle the error appropriately
+        }
     }
 
     private suspend fun saveJsonToCache(jsonData: String) {
